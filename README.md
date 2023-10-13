@@ -1,4 +1,4 @@
-# adsf-venv-test
+# Current Workflow
 This is a my current workflow, with asdf, direnv, and poetry.
 
 See my dotfiles for additional config.
