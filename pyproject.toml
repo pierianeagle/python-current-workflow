@@ -1,0 +1,19 @@
+[tool.poetry]
+name = "python-current-workflow"
+version = "0.1.0"
+description = ""
+authors = ["alpal <spring_special_0f@icloud.com>"]
+readme = "README.md"
+packages = [{include = "python_current_workflow"}]
+
+[tool.poetry.dependencies]
+python = ">=3.10,<3.13"
+pandas = "^2.1.1"
+
+[tool.poetry.group.test.dependencies]
+pytest = "^7.4.2"
+pytest-mock = "^3.11.1"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
