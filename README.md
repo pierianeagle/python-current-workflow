@@ -55,6 +55,17 @@ poetry config virtualenvs.in-project true
 poetry config --list
 ```
 
+# Pip
+Useful commands when working with pip and poetry:
+
+```zsh
+# export dependencies to requirements.txt for Docker
+poetry export --without-hashes --format=requirements.txt > requirements.txt
+
+# uninstall everything
+pip freeze | xargs pip uninstall -y
+```
+
 
 # References
 1. GitHib (2023) A Collection of .gitignore Templates. Available at: https://github.com/github/gitignore (Accessed 13/10/2023).
