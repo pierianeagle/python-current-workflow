@@ -10,15 +10,13 @@
         "editor.defaultFormatter": "ms-python.black-formatter",
         "editor.formatOnSave": true,
         "editor.codeActionsOnSave": {
-            "source.fixAll": true,
-            "source.organizeImports": true
+            "source.fixAll": "explicit",
+            "source.organizeImports": "explicit"
         },
-        "editor.wordBasedSuggestions": false,
+        "editor.wordBasedSuggestions": "off",
 
         "diffEditor.ignoreTrimWhitespace": false,
-        "gitlens.codeLens.symbolScopes": [
-            "!Module"
-        ]
+        "gitlens.codeLens.symbolScopes": ["!Module"]
     },
 
     // replace with ruff?
