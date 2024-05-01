@@ -55,6 +55,22 @@ poetry config virtualenvs.in-project true
 poetry config --list
 ```
 
+### Example 1: Installing a local git repository with extras:
+```zsh
+git clone https://github.com/polakowo/vectorbt.pro.git
+
+# pyproject.toml
+# vectorbtpro = { path = “$HOME/Project/vectorbt.pro“, extras=[“base”], develop = true }
+```
+
+### Example 2: Installing a git repository with extras:
+```zsh
+poetry add "git+https://github.com/polakowo/vectorbt.pro.git[base]"
+
+# pyproject.toml
+# vectorbtpro = { git = "https://github.com/polakowo/vectorbt.pro.git", extras = ["base"] } 
+```
+
 # Pip
 Useful commands when working with pip and poetry:
 
