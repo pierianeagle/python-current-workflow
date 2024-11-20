@@ -27,6 +27,9 @@ poetry add pandas
 
 # export requirements
 # poetry export -f requirements.txt --output requirements.txt
+
+# add global module binaries to path 
+asdf reshim python
 ```
 
 ## When working on an existing project:
@@ -52,6 +55,8 @@ To store virtual environments in the project's root directory:
 
 ```zsh
 poetry config virtualenvs.in-project true
+# export POETRY_VIRTUALENVS_IN_PROJECT=true
+
 poetry config --list
 ```
 
