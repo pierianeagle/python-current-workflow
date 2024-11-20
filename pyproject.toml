@@ -4,10 +4,10 @@ version = "0.1.0"
 description = ""
 authors = ["alpal <spring_special_0f@icloud.com>"]
 readme = "README.md"
-packages = [{include = "python_current_workflow"}]
+packages = [{ include = "current_workflow", from = "src" }]
 
 [tool.poetry.dependencies]
-python = ">=3.10,<3.13"
+python = "^3.13"
 pandas = "^2.1.1"
 
 [tool.poetry.group.test.dependencies]

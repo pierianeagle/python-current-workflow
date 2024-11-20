@@ -1,6 +1,6 @@
 import pytest
 
-from src.current_workflow.asdf import add
+from current_workflow.asdf import add
 
 
 @pytest.mark.parametrize(
