@@ -1,21 +1,18 @@
 # Current Workflow
-This is a my current workflow, with asdf, direnv, and poetry.
+This is a my current workflow, with ~~asdf, direnv, and poetry~~ uv!
 
-See my dotfiles for additional config.
+Please see my dotfiles for additional config.
 
 
 ## When starting a new project:
 ```zsh
 # create repo
-git init
+uv init
 
-# create .gitignore
+# replace .gitignore
 
-# create .tool_versions
-asdf local python latest
-
-# initialise project
-echo "layout poetry" > .envrc
+# optionally set up environment variables
+echo "export API_KEY=123" > .envrc
 direnv allow
 
 # set up vscode settings and workspace
@@ -23,13 +20,11 @@ direnv allow
 # mv .../current_workflow/current-workflow.code-workspace .../current_workflow/{new-project}.code-workspace
 
 # install packages
-poetry add pandas
+uv add pandas
+uv add --group dev ruff
 
-# export requirements
-# poetry export -f requirements.txt --output requirements.txt
-
-# add global module binaries to path 
-asdf reshim python
+# optionally install this package as editable
+uv pip install -e .
 ```
 
 ## When working on an existing project:
@@ -37,27 +32,11 @@ asdf reshim python
 # clone repo
 git clone https://...
 
-# ... set up python environment as above
-
 # install packages
-poetry install
+uv sync --all-groups
 
-# update pip
+# optionally upgrade pip
 pip install --upgrade pip
-
-# make binaries accessible from PATH
-asdf reshim python
-```
-
-
-# Poetry
-To store virtual environments in the project's root directory:
-
-```zsh
-poetry config virtualenvs.in-project true
-# export POETRY_VIRTUALENVS_IN_PROJECT=true
-
-poetry config --list
 ```
 
 ### Example 1: Installing a local git repository with extras:
@@ -81,7 +60,7 @@ Useful commands when working with pip and poetry:
 
 ```zsh
 # export dependencies to requirements.txt for Docker
-poetry export --without-hashes --format=requirements.txt > requirements.txt
+uv pip freeze > requirements.txt
 
 # uninstall everything
 pip freeze | xargs pip uninstall -y
@@ -92,3 +71,5 @@ pip freeze | xargs pip uninstall -y
 1. GitHib (2023) A Collection of .gitignore Templates. Available at: https://github.com/github/gitignore (Accessed 13/10/2023).
 2. Google (2023) Google Python Style Guide. Available at: https://google.github.io/styleguide/pyguide.html (Accessed 13/10/2023).
 3. direnv (2023) poetry. Available at: https://github.com/direnv/direnv/wiki/Python#poetry (Accessed 13/10/2023).
+4. astral (2025) Working on projects. Available at https://docs.astral.sh/uv/guides/projects/ (Accessed 29/05/2025).
+5. direnv (2025) GitHub Issue #1250. Available at: https://github.com/direnv/direnv/issues/1250 (Accessed 29/05/2025).

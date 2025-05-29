@@ -1,19 +1,26 @@
-[tool.poetry]
+[project]
 name = "python-current-workflow"
 version = "0.1.0"
-description = ""
-authors = ["alpal <spring_special_0f@icloud.com>"]
+description = "Add your description here"
+authors = [
+  { name = "alpal", email = "spring_special_0f@icloud.com" }
+]
 readme = "README.md"
-packages = [{ include = "current_workflow", from = "src" }]
+requires-python = ">=3.13"
 
-[tool.poetry.dependencies]
-python = "^3.13"
-pandas = "^2.1.1"
+dependencies = [
+    "pandas>=2.2.3",
+]
 
-[tool.poetry.group.test.dependencies]
-pytest = "^7.4.2"
-pytest-mock = "^3.11.1"
+[dependency-groups]
+dev = [
+    "pre-commit>=4.2.0",
+    "ruff>=0.11.12",
+]
+test = [
+    "pytest>=8.3.5",
+    "pytest-mock>=3.14.1",
+]
 
-[build-system]
-requires = ["poetry-core"]
-build-backend = "poetry.core.masonry.api"
+[tool.ruff]
+src = ["src"]
