@@ -24,3 +24,38 @@ test = [
 
 [tool.ruff]
 src = ["src"]
+select = [
+  "S",  # flake8-bandit
+  "B",  # flake8-bugbear
+  "SIM",  # flake8-simplify
+  "I",  # isort
+  "N",  # pep8-naming
+  "E",  # pycodestyle errors
+  "W",  # pycodestyle warnings
+  "D",  # pydocstyle
+  "F",  # pyflakes
+  "UP",  # pyupgrade
+  "RUF",  # ruff
+]
+ignore = [
+    "D100",  # undocumented-public-module
+    "D101",  # undocumented-public-class
+    "D102",  # undocumented-public-method
+    "D103",  # undocumented-public-function
+    "D104",  # undocumented-public-package
+    "D105",  # undocumented-magic-method
+    "D106",  # undocumented-public-nested-class
+    "D107",  # undocumented-public-init
+    "E203",  # whitespace-before-punctuation
+    "B008",  # function-call-in-default-argument
+    "S101",  # assert
+]
+
+[tool.ruff.pydocstyle]
+convention = "google"
+
+[tool.ruff.format]
+quote-style = "double"
+indent-style = "space"
+docstring-code-format = false
+docstring-code-line-length = "dynamic"
