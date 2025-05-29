@@ -22,8 +22,7 @@ test = [
     "pytest-mock>=3.14.1",
 ]
 
-[tool.ruff]
-src = ["src"]
+[tool.ruff.lint]
 select = [
   "S",  # flake8-bandit
   "B",  # flake8-bugbear
@@ -46,12 +45,13 @@ ignore = [
     "D105",  # undocumented-magic-method
     "D106",  # undocumented-public-nested-class
     "D107",  # undocumented-public-init
+    "D417",  # undocumented-param
     "E203",  # whitespace-before-punctuation
     "B008",  # function-call-in-default-argument
     "S101",  # assert
 ]
 
-[tool.ruff.pydocstyle]
+[tool.ruff.lint.pydocstyle]
 convention = "google"
 
 [tool.ruff.format]
