@@ -39,6 +39,11 @@ uv sync --all-groups
 pip install --upgrade pip
 ```
 
+## To set up the pre-commit hooks:
+```zsh
+pre-commit install
+```
+
 ### Example 1: Installing a local git repository with extras:
 ```zsh
 git clone https://github.com/polakowo/vectorbt.pro.git
@@ -55,14 +60,15 @@ poetry add "git+https://github.com/polakowo/vectorbt.pro.git[base]"
 # vectorbtpro = { git = "https://github.com/polakowo/vectorbt.pro.git", extras = ["base"] } 
 ```
 
-# Pip
-Useful commands when working with pip and poetry:
-
+# Useful commands
 ```zsh
 # export dependencies to requirements.txt for Docker
 uv pip freeze > requirements.txt
 
-# uninstall everything
+# run pre-commit hooks
+pre-commit run --all-files
+
+# uninstall everything with pip
 pip freeze | xargs pip uninstall -y
 ```
 
